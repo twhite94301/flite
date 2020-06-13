@@ -109,7 +109,9 @@ install:
 	mkdir -p $(DESTDIR)$(INSTALLBINDIR)
 	mkdir -p $(DESTDIR)$(INSTALLLIBDIR)
 	mkdir -p $(DESTDIR)$(INSTALLINCDIR)
+	mkdir -p $(DESTDIR)$(INSTALLINCDIR)/voices
 	$(INSTALL) -m 644 include/*.h $(DESTDIR)$(INSTALLINCDIR)
+	$(INSTALL) -m 644 voices/*    $(DESTDIR)$(INSTALLINCDIR)/voices
 	@ $(MAKE) -C main --no-print-directory DESTDIR=$(DESTDIR) install
 
 time-stamp :
